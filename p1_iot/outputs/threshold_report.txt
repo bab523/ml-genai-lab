@@ -1,0 +1,13 @@
+Train rows: 36775 | Test rows: 9110
+
+=== RUL regression (test set) ===
+degree=1  RMSE=58.17 h  MAE=44.95 h
+degree=2  RMSE=57.03 h  MAE=43.13 h
+degree=3  RMSE=56.89 h  MAE=43.03 h
+Best polynomial degree: 3
+
+=== Failure classification (test set) ===
+threshold default 0.50: recall=0.985 precision=0.498 | TP=473 FP=476 FN=7 TN=8154
+threshold tuned 0.837: recall=0.900 precision=0.654 | TP=432 FP=229 FN=48 TN=8401
+
+Missed failures (FN) at tuned threshold are the expensive errors: each one risks ~$45,000/hour of downtime.
