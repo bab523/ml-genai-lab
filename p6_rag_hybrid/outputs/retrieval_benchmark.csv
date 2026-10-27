@@ -1,0 +1,13 @@
+method,queries,n,precision@1,recall@3
+bm25,exact,25,1.0,1.0
+bm25,semantic,23,0.13,0.435
+bm25,all,48,0.583,0.729
+dense,exact,25,0.36,0.6
+dense,semantic,23,0.13,0.565
+dense,all,48,0.25,0.583
+hybrid,exact,25,0.76,0.96
+hybrid,semantic,23,0.087,0.565
+hybrid,all,48,0.438,0.771
+hybrid_rerank,exact,25,1.0,1.0
+hybrid_rerank,semantic,23,0.174,0.435
+hybrid_rerank,all,48,0.604,0.729

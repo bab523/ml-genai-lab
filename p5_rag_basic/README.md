@@ -6,3 +6,8 @@
 - Evaluation: 12 patient-style questions that use different wording from the documents; metrics in outputs/chunking_comparison.csv.
 - Run order: make_docs.py, ingest.py, evaluate.py ("your question" for a search).
 - Note: data/ is git-ignored, so regenerate it by running make_docs.py and ingest.py.
+
+## Findings
+- Header-based chunks keep each clinical section whole; fixed-size chunks can split a fact across two chunks.
+- Results are in outputs/chunking_comparison.csv (top-1 and top-3 answer rates, average context size).
+- Header chunks usually give more complete answers but send more text to the LLM per query.
