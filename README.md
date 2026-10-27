@@ -1,15 +1,7 @@
-# Hands-On ML and Generative AI Lab
-| Folder | Exercise |
-|---|---|
-| p1_iot | IoT failure prediction (Linear and Logistic Regression) |
-| p2_fraud | Fraud scoring and customer segmentation (Trees, Random Forest, K-Means) |
-| p3_demand | Demand forecasting (MLP and Optuna) |
-| p4_router | Support ticket router (LLM API and prompt engineering) |
-| p5_rag_basic | Clinical RAG: chunking, embeddings, ChromaDB |
-| p6_rag_hybrid | Hybrid search (BM25 and vectors) with re-ranking |
-| p7_agent | ReAct financial analyst agent |
-| p8_multiagent | Multi-agent code audit |
-| p9_qlora | QLoRA fine-tuning |
-| p10_capstone | Agentic RAG with guardrails and RAGAS |
-
-Each folder has its own README. Run generate_data.py first where present.
+# P4: Support Ticket Router (LLM API and Prompt Engineering)
+- Model: local llama3.2:3b via Ollama (OpenAI-compatible API). Any provider works through .env.
+- Data: 60 synthetic labeled tickets (generate_tickets.py); the benchmark uses a 30-ticket sample.
+- Output: Pydantic-validated JSON (priority, category, draft_response).
+- Reliability: tenacity retries with exponential backoff; retried on API errors and invalid JSON.
+- Prompt variants: zero-shot, few-shot, chain-of-thought. Results: outputs/prompt_benchmark.csv.
+- Setup: copy .env.example values into .env (never commit keys).
