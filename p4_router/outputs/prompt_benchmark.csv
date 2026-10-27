@@ -1,0 +1,4 @@
+variant,category_acc,priority_acc,avg_latency_s,failures
+zero_shot,0.767,0.633,10.81,0
+few_shot,0.933,0.6,5.34,0
+cot,0.767,0.667,8.42,0
