@@ -1,0 +1,3 @@
+strategy,top1_correct_doc,top1_has_answer,top3_has_answer,avg_context_chars
+fixed,0.833,0.75,0.833,1384
+header,0.917,0.75,1.0,788
