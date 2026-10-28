@@ -1,7 +1,7 @@
 import re, shutil, subprocess, sys, os
 from openai import OpenAI
 
-client = OpenAI(base_url="http://localhost:11434/v1", api_key="ollama", timeout=600)
+client = OpenAI(base_url="http://localhost:11434/v1", api_key="ollama", timeout=1500)
 MODEL = os.getenv("LLM_MODEL", "qwen2.5:7b")
 MAX_ROUNDS = 3
 TARGET = "data/target"
@@ -11,9 +11,11 @@ log = []
 def say(who, msg):
     print(f"[{who}] {msg[:160]}")
     log.append(f"### {who}\n{msg}\n")
+    os.makedirs("outputs", exist_ok=True)
+    open("outputs/audit_log.md", "w").write("# Multi-agent security audit log\n\n" + "\n".join(log))
 
 def llm(system, user):
-    r = client.chat.completions.create(model=MODEL, temperature=0,
+    r = client.chat.completions.create(model=MODEL, temperature=0, max_tokens=1200,
         messages=[{"role": "system", "content": system}, {"role": "user", "content": user}])
     return r.choices[0].message.content
 
