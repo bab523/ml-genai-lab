@@ -6,7 +6,8 @@
 - Model: local qwen2.5:7b via Ollama.
 - Limitation: the tests cover only these four issues, so a pass does not prove the code is fully secure.
 
+
 ## Results
-- Run 1 with qwen2.5:7b timed out on CPU after 600 s (request too slow).
-- Run 2 with llama3.2:3b: see the verdict in outputs/audit_log.md.
-- Lesson: local 7B models are too slow on a CPU-only laptop for multi-step agent loops; the timeout was raised and the log is saved after each step.
+- Model: llama3.2:3b via Ollama (qwen2.5:7b timed out on a CPU-only laptop).
+- Verdict: PUT YOUR VERDICT LINE HERE (for example "PASSED after 2 rounds" or "NOT FIXED after 3 rounds").
+- See outputs/audit_log.md for the full agent conversation and the self-correction loop.
