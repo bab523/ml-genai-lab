@@ -9,5 +9,5 @@
 
 ## Results
 - Model: llama3.2:3b via Ollama (qwen2.5:7b timed out on a CPU-only laptop).
-- Verdict: PUT YOUR VERDICT LINE HERE (for example "PASSED after 2 rounds" or "NOT FIXED after 3 rounds").
+- Verdict: PASSED after 1 round (all pytest tests green).
 - See outputs/audit_log.md for the full agent conversation and the self-correction loop.
