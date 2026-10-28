@@ -6,3 +6,9 @@
 - Evaluation: exact-reference queries vs paraphrased queries; precision@1 and recall@3 in outputs/retrieval_benchmark.csv.
 - Generation: answer.py uses a local llama3.2:3b with enforced clause-id citations and refusal when the context lacks the answer.
 - Run order: make_contracts.py, retrievers.py, evaluate.py, answer.py.
+
+## Findings
+- BM25 handles exact clause references; dense search handles paraphrased questions.
+- Hybrid (RRF) combines both; the cross-encoder re-ranker improves precision@1 further.
+- See outputs/retrieval_benchmark.csv for the exact numbers.
+- Limitation: a 3B local model occasionally ignores the citation rule.
